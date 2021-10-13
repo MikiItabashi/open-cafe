@@ -6,3 +6,6 @@
 @import "object/project/**";
 @import "wordpress/**";
 @import "utility/**";
+body {
+    font-size: rem(16);
+}

@@ -4,56 +4,57 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+
 /* リキッドレイアウト対応 */
+
 html {
-	//375px~787px
-	font-size: vw(375, 16);
-
-	@include mq("sp") {
-		font-size: 16px;
-	}
-
-	//787px~inner
-	@include mq("tab") {
-		font-size: vw(strip-unit($l-inner), 16);
-	}
-
-	//inner~max-screen
-	@media (min-width: $l-inner) {
-		font-size: 16px;
-	}
+    //375px~787px
+    font-size: vw(375, 16);
+    @include mq("sp") {
+        font-size: 16px;
+    }
+    //787px~inner
+    @include mq("tab") {
+        font-size: vw(strip-unit($l-inner), 16);
+    }
+    //inner~max-screen
+    @media (min-width: $l-inner) {
+        font-size: 16px;
+    }
 }
 
 html,
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	font-family: $font-family-base;
-	font-size: $font-size-base;
-	font-weight: $font-weight-base;
-	color: $text-color;
-	line-height: $lh;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: $background;
-	overflow-wrap: break-word;
-	min-height: 100vh;
-	min-height: -webkit-fill-available;
-	position: relative;
-	z-index: -9999;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: $text-dark;
+    line-height: $lh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $background;
+    overflow-wrap: break-word;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    position: relative;
+    z-index: -9999;
 }
 
+
 /* Box sizing rules */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 article,
@@ -67,7 +68,7 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+    display: block;
 }
 
 h1,
@@ -133,83 +134,82 @@ thead,
 tr,
 th,
 td {
-	margin: 0;
-	padding: 0;
-	border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 a {
-	color: inherit;
-	cursor: pointer;
-	text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	border: none;
-	vertical-align: top;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    vertical-align: top;
 }
 
 video,
 iframe,
 object {
-	max-width: 100%;
-	height: auto;
-	border: none;
+    max-width: 100%;
+    height: auto;
+    border: none;
 }
-
 
 ul,
 ol {
-	list-style: none;
+    list-style: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
-	table-layout: fixed;
-	border: 1px solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid;
 }
 
 th,
 td {
-	padding: 4px 6px;
-	text-align: left;
-	vertical-align: top;
-	border: 1px solid;
+    padding: 4px 6px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid;
 }
 
 blockquote,
 q {
-	quotes: none;
+    quotes: none;
 }
 
 blockquote::after,
 blockquote::before,
 q::after,
 q::before {
-	content: "";
-	content: none;
+    content: "";
+    content: none;
 }
 
 address {
-	font-style: normal;
+    font-style: normal;
 }
 
 b,
 strong {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 form {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 label {
-	display: inline-block;
+    display: inline-block;
 }
 
 a,
@@ -221,7 +221,7 @@ select,
 summary,
 textarea,
 [tabindex] {
-	touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 input,
@@ -229,62 +229,62 @@ button,
 select,
 optgroup,
 textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 button,
 select {
-	text-transform: none;
+    text-transform: none;
 }
 
 select {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 textarea {
-	overflow: auto;
-	-ms-overflow-style: scrollbar;
-	resize: vertical;
+    overflow: auto;
+    -ms-overflow-style: scrollbar;
+    resize: vertical;
 }
 
 dialog {
-	background-color: inherit;
-	border: solid;
-	color: inherit;
-	display: block;
-	height: fit-content;
-	left: 0;
-	margin: auto;
-	padding: 1em;
-	position: absolute;
-	right: 0;
-	width: fit-content;
-
-	&:not([is-open]) {
-		display: none;
-	}
+    background-color: inherit;
+    border: solid;
+    color: inherit;
+    display: block;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: fit-content;
+    &:not([is-open]) {
+        display: none;
+    }
 }
 
 summary {
-	display: list-item;
-	cursor: pointer;
+    display: list-item;
+    cursor: pointer;
 }
 
 
 /* Remove all animations and transitions for people that prefer not to see them */
+
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
