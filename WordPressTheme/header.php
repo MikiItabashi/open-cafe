@@ -16,5 +16,5 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="">
-    <p class="c-test">aaaa</p>
+    <p class="c-test">header</p>
   </header>

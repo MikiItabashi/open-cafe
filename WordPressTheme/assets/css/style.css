@@ -265,15 +265,18 @@ summary {
 .l-inner {
 	height: inherit;
 	margin: 0 auto;
-	max-width: 1050px;
+	max-width: 1150px;
 	padding-left: 25px;
 	padding-right: 25px;
 	width: 100%;
 }
 
-.c-test {
-	color: pink;
-	font-size: 3.125rem;
+.l-inner--wide {
+	max-width: 1230px;
+}
+
+.l-inner--slim {
+	max-width: 738px;
 }
 
 .u-mobile {
@@ -303,7 +306,7 @@ html:focus-within {
 
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
 
 html {
 	font-size: 16px;
@@ -314,7 +317,7 @@ html {
 @media screen and (max-width: 1023px) {
 
 html {
-	font-size: 1.6vw;
+	font-size: 1.45455vw;
 }
 
 .l-inner {
@@ -322,11 +325,6 @@ html {
 	padding-left: 20px;
 	padding-right: 20px;
 	width: 100%;
-}
-
-.c-test {
-	color: green;
-	font-size: 1.875rem;
 }
 
 .u-mobile {

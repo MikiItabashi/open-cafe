@@ -1,18 +1,23 @@
-
 // インナー
 .l-inner {
-	margin: 0 auto;
-	max-width: $l-inner + strip-unit($padding-pc) * 2;
-	width: 100%;
-	height: inherit;
-	padding-right: $padding-pc;
-	padding-left: $padding-pc;
-
-	@include mq(tab) {
-		max-width: rem(540);
-		width: 100%;
-		padding-right: $padding-sp;
-		padding-left: $padding-sp;
-	}
+    margin: 0 auto;
+    max-width: $l-inner + strip-unit($padding-pc) * 2;
+    width: 100%;
+    height: inherit;
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+    @include mq(tab) {
+        max-width: rem(540);
+        width: 100%;
+        padding-right: $padding-sp;
+        padding-left: $padding-sp;
+    }
 }
 
+.l-inner--wide {
+    max-width: $l-inner-wide + strip-unit($padding-pc) * 2;
+}
+
+.l-inner--slim {
+    max-width: $l-inner-slim + strip-unit($padding-pc) * 2;
+}
