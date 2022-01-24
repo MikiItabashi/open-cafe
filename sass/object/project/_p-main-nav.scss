@@ -1,0 +1,38 @@
+.p-main-nav {
+    text-align: center;
+}
+
+.p-main-nav__logo {
+    margin-top: rem(30);
+    img {
+        max-width: rem(163);
+    }
+}
+
+.p-main-nav__items {
+    margin-top: rem(40);
+}
+
+.p-main-nav__item {
+    a {
+        display: inline-block;
+        padding: rem(16) 0;
+        width: 100%;
+        font-size: rem(16);
+        letter-spacing: 0.12em;
+        line-height: (20 / 16);
+        font-family: $font-family-fourth;
+        text-transform: uppercase;
+    }
+    span {
+        margin-top: rem(4);
+        font-size: rem(10);
+        font-weight: 500;
+        line-height: (15 / 10);
+        font-family: $font-family-base;
+    }
+}
+
+.p-main-nav__sns {
+    margin-top: rem(30);
+}

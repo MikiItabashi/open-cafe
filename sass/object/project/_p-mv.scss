@@ -1,0 +1,22 @@
+.p-mv {
+    display: flex;
+    position: relative;
+    padding-bottom: rem(60);
+    &::before {
+        position: absolute;
+        content: "";
+        width: 76.875%;
+        height: 100%;
+        background: $base-color;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.p-mv__nav {
+    width: 15.625%;
+}
+
+.p-mv__slider {
+    width: calc(100% - 15.625%);
+}

@@ -1,6 +1,6 @@
 .c-tab-btn {
     display: inline-block;
-    background: $main-color;
+    background: $disable-color;
     color: $text-light;
     font-weight: 700;
     line-height: (20 / 16);
@@ -9,6 +9,7 @@
     max-width: rem(200);
     text-align: center;
     position: relative;
+    transition: 0.3s background-color;
     &::before {
         position: absolute;
         content: "";
@@ -20,8 +21,12 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    &:hover {
+        background: $main-color;
+    }
 }
 
-.c-tab-btn--disable {
-    background: $disable-color;
+.c-tab-btn--active {
+    background: $main-color;
+    cursor: initial;
 }

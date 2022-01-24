@@ -12,7 +12,7 @@
 
 html {
     //375px~787px
-    font-size: vw(375, 16);
+    // font-size: vw(375, 16);
     @include mq("sp") {
         font-size: 16px;
     }

@@ -1,0 +1,14 @@
+.p-sns {}
+
+.p-sns__items {
+    display: flex;
+    justify-content: center;
+}
+
+.p-sns__item {
+    font-size: rem(20);
+    &:not(:last-child) {
+        margin-right: rem(24);
+    }
+    a {}
+}

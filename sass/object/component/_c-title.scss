@@ -1,0 +1,17 @@
+.c-title {}
+
+.c-title-en {
+    text-transform: uppercase;
+    font-size: rem(52);
+    font-family: $font-family-second;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: (66 / 52);
+}
+
+.c-title-ja {
+    margin-top: rem(8);
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: (20 / 14);
+}

@@ -20,11 +20,26 @@
         border-right: 1px $text-dark solid;
         top: rem(6);
         left: rem(6);
+        transition: 0.3s top, 0.3s left;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url(../img/icon_arrow-right.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(8);
+        height: rem(14);
+        top: 50%;
+        right: rem(16);
+        transform: translateY(-50%);
     }
     &:hover {
         transform: initial;
         &::before {
-            display: none;
+            top: 0;
+            left: 0;
         }
     }
 }

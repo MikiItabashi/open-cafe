@@ -1,0 +1,14 @@
+.c-to-top {
+    position: fixed;
+    background: $text-light;
+    border-radius: 50%;
+    width: rem(44);
+    height: rem(44);
+    right: rem(20);
+    bottom: rem(20);
+    z-index: 10;
+    @include mq('sp') {
+        right: rem(8);
+        bottom: rem(8);
+    }
+}

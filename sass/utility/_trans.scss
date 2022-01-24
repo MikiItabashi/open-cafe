@@ -1,0 +1,7 @@
+.trans {
+    opacity: 1;
+    transition: 0.3s opacity;
+    &:hover {
+        opacity: $opacity;
+    }
+}

@@ -1,0 +1,73 @@
+.p-top-concept {
+    padding-bottom: rem(100);
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 92.96875%;
+        height: 34.6820%;
+        background: $base-color;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+.p-top-concept__content {
+    display: flex;
+    justify-content: flex-start;
+    gap: rem(80);
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: rem(296);
+        height: rem(265);
+        background-image: url(../img/bg_coffee-beans.png);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: rem(-30);
+        top: rem(-228);
+        z-index: 3;
+    }
+}
+
+.p-top-concept__img {
+    width: 46.875%;
+    position: relative;
+    &::before {
+        padding-top: 127.33%; //height / width
+        display: block;
+        content: "";
+    }
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.p-top-concept__body {
+    width: 36.71875%;
+}
+
+.p-top-concept__title {}
+
+.p-top-concept__subtitle {
+    margin-top: rem(60);
+    white-space: nowrap;
+}
+
+.p-top-concept__text {
+    margin-top: rem(60);
+}
+
+.p-top-concept__btn {
+    margin-top: rem(60);
+}

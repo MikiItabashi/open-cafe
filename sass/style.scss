@@ -8,4 +8,11 @@
 @import "utility/**";
 body {
     font-size: rem(16);
+    @include mq('sp') {
+        font-size: rem(14);
+    }
+}
+
+main {
+    overflow: hidden;
 }
