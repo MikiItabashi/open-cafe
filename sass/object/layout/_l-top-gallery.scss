@@ -1,0 +1,6 @@
+.l-top-gallery {
+    margin-top: rem(160);
+    @include mq('sp') {
+        margin-top: rem(120);
+    }
+}

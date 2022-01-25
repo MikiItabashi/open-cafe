@@ -1,0 +1,77 @@
+.p-top-menu {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 80%;
+        height: 83%;
+        background: $base-color;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+.p-top-menu__inner {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: rem(267);
+        height: rem(294);
+        background-image: url(../img/bg_coffee-leaves2.png);
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: rem(-30);
+        top: rem(-228);
+        z-index: 3;
+    }
+}
+
+.p-top-menu__title {
+    text-align: center;
+}
+
+.p-top-menu__content {
+    margin-top: rem(40);
+}
+
+.p-top-menu__genre {}
+
+.p-top-menu__subtitle {
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: (35 / 24);
+    padding: rem(4) rem(20);
+    border-top: 1px solid $text-dark;
+    border-bottom: 1px solid $text-dark;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: calc(100% + #{rem(6)} * 2);
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        border-top: 2px solid $text-dark;
+        border-bottom: 2px solid $text-dark;
+    }
+}
+
+.p-top-menu__items {
+    margin-top: rem(24);
+    margin-bottom: rem(100);
+    display: grid;
+    gap: rem(36) rem(40);
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.p-top-menu__item {}
+
+.p-top-menu__btn {
+    text-align: center;
+    margin-top: rem(60);
+}

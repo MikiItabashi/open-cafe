@@ -1,0 +1,31 @@
+.p-footer {
+    background: $main-color;
+    color: $text-light;
+    text-align: center;
+    padding-top: rem(40);
+    padding-bottom: rem(20);
+}
+
+.p-footer__inner {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: rem(322);
+        height: rem(288);
+        background-image: url(../img/bg_coffee-beans3.png);
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: rem(-150);
+        bottom: 0;
+        z-index: 3;
+    }
+}
+
+.p-footer__sns {}
+
+.p-footer__copyright {
+    margin-top: rem(40);
+    font-size: rem(12);
+}

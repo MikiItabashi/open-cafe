@@ -1,0 +1,91 @@
+.p-top-access {
+    background: $base-color;
+}
+
+.p-top-access__inner {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: rem(374);
+        height: rem(359);
+        background-image: url(../img/bg_bread.png);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: rem(-150);
+        top: rem(-150);
+        z-index: 3;
+    }
+}
+
+.p-top-access__title {
+    text-align: center;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: rem(232);
+        height: rem(200);
+        background-image: url(../img/img_balloon-access.svg);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: calc(50% + #{rem(100)});
+        top: rem(-105);
+        z-index: 3;
+    }
+}
+
+.p-top-access__map {
+    margin-top: rem(40);
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        border: 8px solid $text-light;
+        width: 101%;
+        height: 101%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.p-top-access__info {
+    margin-top: rem(40);
+}
+
+.p-top-access__items {
+    display: grid;
+    gap: rem(40) rem(24);
+    grid-template-columns: 1fr 1fr;
+}
+
+.p-top-access__item {
+    display: flex;
+    justify-content: start;
+    padding-bottom: rem(14);
+    border-bottom: 1px solid $text-dark;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: (24 / 14);
+}
+
+.p-top-access__term {
+    width: rem(80);
+}
+
+.p-top-access__description {
+    width: calc(100% - #{rem(80)});
+}

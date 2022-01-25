@@ -1,0 +1,44 @@
+.p-set-item {}
+
+.p-set-item__img {
+    width: 100%;
+    position: relative;
+    &::before {
+        padding-top: 100%; //height / width
+        display: block;
+        content: "";
+    }
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.p-set-item__body {
+    margin-top: rem(16);
+    display: flex;
+    gap: rem(12);
+}
+
+.p-set-item__number {
+    display: inline-block;
+    background: $text-dark;
+    color: $text-light;
+    font-family: $font-family-fourth;
+    font-size: rem(32);
+    line-height: (39 / 32);
+    padding: rem(5) rem(14);
+    text-transform: uppercase;
+}
+
+.p-set-item__name {
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: (26 / 18);
+}

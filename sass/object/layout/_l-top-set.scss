@@ -1,0 +1,6 @@
+.l-top-set {
+    margin-top: rem(240);
+    @include mq('sp') {
+        margin-top: rem(120);
+    }
+}

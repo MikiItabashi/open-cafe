@@ -1,0 +1,8 @@
+.l-top-menu {
+    padding-top: rem(160);
+    padding-bottom: rem(80);
+    @include mq('sp') {
+        padding-top: rem(120);
+        padding-bottom: rem(60);
+    }
+}

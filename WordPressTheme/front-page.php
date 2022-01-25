@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="p-main-nav__item">
-                <a href="<?php echo esc_url(home_url('concept')) ?>" class="trans">
+                <a href="<?php echo esc_url(home_url('menu')) ?>" class="trans">
                     menu
                     <br>
                     <span>メニュー</span>
@@ -133,12 +133,329 @@
                 <p class="p-top-concept__subtitle c-subtitle">最高のコーヒーと、<br>時の流れを味わうことができる<br>手作りカフェ</p>
                 <p class="p-top-concept__text">ダミー_国内外から賞賛を<br>受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。<br>ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。<br><br>ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</p>
                 <div class="p-top-concept__btn">
-                    <a href="#" class="c-btn">詳しくはこちら</a>
+                    <a href="<?php echo esc_url(home_url('concept')) ?>" class="c-btn">詳しくはこちら</a>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
+<section class="p-top-set l-top-set">
+    <div class="p-top-set__inner l-inner l-inner--wide">
+        <div class="p-top-set__title c-title">
+            <h2 class="c-title-en">special lunch set</h2>
+            <p class="c-title-ja">今月のスペシャルランチセット</p>
+        </div>
+        <div class="p-top-set__content">
+            <p class="p-top-set__ribbon">お好きなパスタをお選びください</p>
+            <div class="p-top-set__items">
+                <div class="p-top-set__item p-set-item">
+                    <div class="p-set-item__img">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_special_pasta1.jpg" alt="パスタの写真">
+                    </div>
+                    <div class="p-set-item__body">
+                        <p class="p-set-item__number">a</p>
+                        <p class="p-set-item__name">テキストテキストの○○風パスタ</p>
+                    </div>
+                </div>
+                <div class="p-top-set__item p-set-item">
+                    <div class="p-set-item__img">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_special_pasta2.jpg" alt="パスタの写真">
+                    </div>
+                    <div class="p-set-item__body">
+                        <p class="p-set-item__number">b</p>
+                        <p class="p-set-item__name">テキストテキストの○○風パスタ</p>
+                    </div>
+                </div>
+                <div class="p-top-set__item p-set-item">
+                    <div class="p-set-item__img">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_special_pasta3.jpg" alt="パスタの写真">
+                    </div>
+                    <div class="p-set-item__body">
+                        <p class="p-set-item__number">c</p>
+                        <p class="p-set-item__name">テキストテキストの○○風パスタ</p>
+                    </div>
+                </div>
+                <div class="p-top-set__item p-set-item">
+                    <div class="p-set-item__img">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_special_pasta4.jpg" alt="パスタの写真">
+                    </div>
+                    <div class="p-set-item__body">
+                        <p class="p-set-item__number">d</p>
+                        <p class="p-set-item__name">テキストテキストの○○風パスタ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-top-set__body">
+                <div class="p-top-set__img">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_lunch-detail.png" alt="パスタ+サラダ+ドリンク">
+                </div>
+                <div class="p-top-set__info">
+                    <p class="p-top-set__head">スペシャルランチセット<br>【選べる3品】</p>
+                    <p class="p-top-set__price">1,280 yen</p>
+                    <p class="p-top-set__time">(11:00 AM〜14:00 PMまで)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-top-menu l-top-menu">
+    <div class="p-top-menu__inner l-inner">
+        <div class="p-top-menu__title c-title">
+            <h2 class="c-title-en">grand menu</h2>
+            <p class="c-title-ja">グランドメニュー</p>
+        </div>
+        <div class="p-top-menu__content">
+            <div class="p-top-menu__genre">
+                <h3 class="p-top-menu__subtitle">パスタ</h3>
+                <div class="p-top-menu__items">
+
+                    <?php
+                    $args = array(
+                        'posts_per_page' => 3, // 表示する投稿数
+                        'post_type' => array('custom_menu'), // 取得する投稿タイプのスラッグ
+                        'order' => 'ASC', // 降順 or 昇順
+                        'tax_query' => [
+                            [
+                                'taxonomy' => 'genre', // 絞り込みたいカスタムタクソノミー
+                                'field' => 'slug', // スラッグで検索。idでも検索できます
+                                'terms' => 'pasta', // 検索する文字列（fieldがidならidが入ります）
+                                'include_children' => true, // 子タクソノミーを含むかどうか
+                                'operator' => 'AND' // termsが複数ある場合AND検索（全て）かIN検索（いずれか）かNOT IN（いずれも除く）
+                            ]
+                        ]
+                    );
+                    $my_posts = get_posts($args);
+                    ?>
+                    <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
+
+                        <?php get_template_part('templates/grand-menu'); ?>
+
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+
+                </div>
+                <h3 class="p-top-menu__subtitle">サラダ</h3>
+                <div class="p-top-menu__items">
+
+                    <?php
+                    $args = array(
+                        'posts_per_page' => 3, // 表示する投稿数
+                        'post_type' => array('custom_menu'), // 取得する投稿タイプのスラッグ
+                        'order' => 'ASC', // 降順 or 昇順
+                        'tax_query' => [
+                            [
+                                'taxonomy' => 'genre', // 絞り込みたいカスタムタクソノミー
+                                'field' => 'slug', // スラッグで検索。idでも検索できます
+                                'terms' => 'salad', // 検索する文字列（fieldがidならidが入ります）
+                                'include_children' => true, // 子タクソノミーを含むかどうか
+                                'operator' => 'AND' // termsが複数ある場合AND検索（全て）かIN検索（いずれか）かNOT IN（いずれも除く）
+                            ]
+                        ]
+                    );
+                    $my_posts = get_posts($args);
+                    ?>
+                    <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
+
+                        <?php get_template_part('templates/grand-menu'); ?>
+
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+
+                </div>
+                <h3 class="p-top-menu__subtitle">パン & スイーツ</h3>
+                <div class="p-top-menu__items">
+
+                    <?php
+                    $args = array(
+                        'posts_per_page' => 6, // 表示する投稿数
+                        'post_type' => array('custom_menu'), // 取得する投稿タイプのスラッグ
+                        'order' => 'ASC', // 降順 or 昇順
+                        'tax_query' => [
+                            [
+                                'taxonomy' => 'genre', // 絞り込みたいカスタムタクソノミー
+                                'field' => 'slug', // スラッグで検索。idでも検索できます
+                                'terms' => 'bread-sweets', // 検索する文字列（fieldがidならidが入ります）
+                                'include_children' => true, // 子タクソノミーを含むかどうか
+                                'operator' => 'AND' // termsが複数ある場合AND検索（全て）かIN検索（いずれか）かNOT IN（いずれも除く）
+                            ]
+                        ]
+                    );
+                    $my_posts = get_posts($args);
+                    ?>
+                    <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
+
+                        <?php get_template_part('templates/grand-menu'); ?>
+
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+
+                </div>
+                <h3 class="p-top-menu__subtitle">ドリンク</h3>
+                <div class="p-top-menu__drink p-drink-menu">
+                    <div class="p-drink-menu__img">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_coffee.jpg" alt="コーヒーの写真">
+                    </div>
+                    <div class="p-drink-menu__block">
+                        <p class="p-drink-menu__heading">コーヒー</p>
+                        <ul class="p-drink-menu__items">
+                            <li class="p-drink-menu__item">ブレンド<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">カフェラテ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">豆乳ラテ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">カフェモカ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">キャラメルラテ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">バニララテ<span class="p-drink-menu__price">500yen</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-drink-menu__block">
+                        <p class="p-drink-menu__heading">紅茶</p>
+                        <ul class="p-drink-menu__items">
+                            <li class="p-drink-menu__item">ストレート<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">ミルク<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500yen</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-drink-menu__block">
+                        <p class="p-drink-menu__heading">ソフトドリンク</p>
+                        <ul class="p-drink-menu__items">
+                            <li class="p-drink-menu__item">バナナ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">オレンジ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">マンゴー<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">ミックス<span class="p-drink-menu__price">500yen</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-top-menu__btn">
+                    <a href="<?php echo esc_url(home_url('menu')) ?>" class="c-btn">その他のメニュー</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-top-gallery l-top-gallery">
+    <div class="p-top-gallery__inner l-inner">
+        <div class="p-top-gallery__title c-title">
+            <h2 class="c-title-en">gallery</h2>
+            <p class="c-title-ja">ギャラリー</p>
+        </div>
+        <div class="p-top-gallery__items">
+            <div class="p-top-gallery__item">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_gallery1.jpg" alt="ギャラリー写真">
+            </div>
+            <div class="p-top-gallery__item">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_gallery2.jpg" alt="ギャラリー写真">
+            </div>
+            <div class="p-top-gallery__item">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_gallery3.jpg" alt="ギャラリー写真">
+            </div>
+            <div class="p-top-gallery__item">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_gallery4.jpg" alt="ギャラリー写真">
+            </div>
+        </div>
+        <div class="p-top-gallery__btn">
+            <a href="#" class="c-btn">インスタグラムを見る</a>
+        </div>
+    </div>
+</section>
+
+<section class="p-top-news l-top-news">
+    <div class="p-top-news__inner l-inner">
+        <div class="p-top-news__title c-title">
+            <h2 class="c-title-en">news</h2>
+            <p class="c-title-ja">お知らせ</p>
+        </div>
+        <div class="p-top-news__items">
+
+            <?php
+            $args = array(
+                'posts_per_page' => 5, //全件取得
+                'post_type' => 'post', //取得対象は固定ページ
+                'orderby' => 'menu_order', //並び順は管理画面で指定した並び順
+                'order' => 'ASC', //昇順
+            );
+            $common_pages = new WP_Query($args);
+            if ($common_pages->have_posts()) :
+                while ($common_pages->have_posts()) : $common_pages->the_post();
+                    $counter++;
+            ?>
+            <article class="p-top-news__item">
+                    <a href="<?php the_permalink(); ?>" class="p-top-news__link p-news-card
+                    <?php if ($counter <= 1) {
+                        echo 'p-news-card--big';
+                    }; ?>">
+                        <div class="p-news-card__img">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="サムネイル画像">
+                        </div>
+                        <div class="p-news-card__content">
+                            <p class="p-news-card__title"><?php the_title(); ?></p>
+                            <?php if ($counter <= 1) : ?>
+                                <p class="p-news-card__text"><?php the_excerpt(); ?></p>
+                            <?php endif; ?>
+                            <time class="p-news-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
+                        </div>
+                        <?php
+                        $category = get_the_category();
+                        if ($category[0]) {
+                            echo '<p class="p-news-card__category c-ribbon">' . $category[0]->cat_name . '</p>';
+                        }
+                        ?>
+                    </a>
+                    </article>
+                <?php
+                endwhile;
+                wp_reset_postdata(); //メインクエリに戻す前にリセットする
+                ?>
+            <?php else : ?>
+                <p>記事が見つかりませんでした</p>
+            <?php endif; ?>
+        </div>
+        <div class="p-top-news__btn">
+            <a href="<?php echo esc_url(home_url('news')) ?>" class="c-btn">過去のお知らせ</a>
+        </div>
+    </div>
+</section>
+
+<section class="p-top-access l-top-access">
+    <div class="p-top-access__inner l-inner l-inner--slim">
+        <div class="p-top-access__title c-title">
+            <h2 class="c-title-en">access</h2>
+            <p class="c-title-ja">アクセス</p>
+        </div>
+        <div class="p-top-access__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0370288636677!2d139.57802391591812!3d35.700706386509644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee39b555205f%3A0xabb26a0a2fbda595!2z44CSMTgwLTAwMDMg5p2x5Lqs6YO95q2m6JS16YeO5biC5ZCJ56Wl5a-65Y2X55S677yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1643101340312!5m2!1sja!2sjp" width="688" height="387" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="p-top-access__info">
+            <dl class="p-top-access__items">
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">住所</dt>
+                    <dd class="p-top-access__description">〒000-0000<br>東京都武蔵野市吉祥寺南町一丁目</dd>
+                </div>
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">営業時間</dt>
+                    <dd class="p-top-access__description">7:00〜21:00<br>※ラストオーダー 20:30</dd>
+                </div>
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">TEL</dt>
+                    <dd class="p-top-access__description">0123-456-789</dd>
+                </div>
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">定休日</dt>
+                    <dd class="p-top-access__description">水曜日</dd>
+                </div>
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">Mail</dt>
+                    <dd class="p-top-access__description">example@mail.com</dd>
+                </div>
+                <div class="p-top-access__item">
+                    <dt class="p-top-access__term">座席</dt>
+                    <dd class="p-top-access__description">テーブル20席 ／ カウンター席6席</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
 </section>
 
 <?php get_footer(); ?>
