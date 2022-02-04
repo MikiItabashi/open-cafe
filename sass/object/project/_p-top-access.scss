@@ -39,7 +39,7 @@
     }
 }
 
-.p-top-access__map {
+.p-access-item__map {
     margin-top: rem(40);
     position: relative;
     width: 100%;
@@ -62,17 +62,17 @@
     }
 }
 
-.p-top-access__info {
+.p-access-item__info {
     margin-top: rem(40);
 }
 
-.p-top-access__items {
+.p-access-item__items {
     display: grid;
     gap: rem(40) rem(24);
     grid-template-columns: 1fr 1fr;
 }
 
-.p-top-access__item {
+.p-access-item__item {
     display: flex;
     justify-content: start;
     padding-bottom: rem(14);
@@ -82,10 +82,10 @@
     line-height: (24 / 14);
 }
 
-.p-top-access__term {
+.p-access-item__term {
     width: rem(80);
 }
 
-.p-top-access__description {
+.p-access-item__description {
     width: calc(100% - #{rem(80)});
 }

@@ -99,23 +99,57 @@
             <div class="swiper-pagination"></div>
         </div>
         <p class="p-slider__text">パスタとコーヒーがとってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
-        <article class="p-slider__news p-puckup-news">
-            <a href="#" class="p-puckup-news__link">
-                <div class="p-puckup-news__container">
-                    <div class="p-puckup-news__img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="サムネイル画像">
-                    </div>
-                    <div class="p-puckup-news__content">
-                        <p class="p-puckup-news__date">2021.01.01</p>
-                        <p class="p-puckup-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、あらゆる空間が誕生。</p>
-                    </div>
-                    <div class="p-puckup-news__baloon">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_balloon-pickup.svg" alt="Pick up ニュース！">
-                    </div>
-                    <p class="p-puckup-news__category c-ribbon">カテゴリ</p>
-                </div>
-            </a>
-        </article>
+
+        <?php
+        $args = array(
+            'posts_per_page' => 1, // 1件取得
+            'post_type' => 'post', // 投稿タイプ
+            'tag' => 'pickup', // pickupタグがついたものを
+            'orderby' => 'DESC', // 新しい順に
+        );
+
+        $pickup_pages = new WP_Query($args);
+        if ($pickup_pages->have_posts()) :
+            while ($pickup_pages->have_posts()) : $pickup_pages->the_post();
+        ?>
+
+                <article class="p-slider__news p-puckup-news">
+                    <a href="<?php the_permalink(); ?>" class="p-puckup-news__link">
+                        <div class="p-puckup-news__container">
+                            <div class="p-puckup-news__img">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    // アイキャッチ画像が設定されてれば大サイズで表示
+                                    the_post_thumbnail('large');
+                                } else {
+                                    // なければnoimage画像をデフォルトで表示
+                                    echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/mv1.jpg" alt="サムネイル画像">';
+                                } ?>
+                            </div>
+                            <div class="p-puckup-news__content">
+                                <time class="p-puckup-news__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
+                                <p class="p-puckup-news__title"><?php the_title(); ?></p>
+                            </div>
+                            <div class="p-puckup-news__baloon">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_balloon-pickup.svg" alt="Pick up ニュース！">
+                            </div>
+
+                            <?php
+                            $category = get_the_category();
+                            if ($category[0]) {
+                                echo '<p class="p-puckup-news__category c-ribbon">' . $category[0]->cat_name . '</p>';
+                            }
+                            ?>
+                        </div>
+                    </a>
+                </article>
+
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        <?php endif; ?>
+
     </div>
 </section>
 
@@ -381,28 +415,28 @@
                 while ($common_pages->have_posts()) : $common_pages->the_post();
                     $counter++;
             ?>
-            <article class="p-top-news__item">
-                    <a href="<?php the_permalink(); ?>" class="p-top-news__link p-news-card
+                    <article class="p-top-news__item">
+                        <a href="<?php the_permalink(); ?>" class="p-top-news__link p-news-card
                     <?php if ($counter <= 1) {
                         echo 'p-news-card--big';
                     }; ?>">
-                        <div class="p-news-card__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="サムネイル画像">
-                        </div>
-                        <div class="p-news-card__content">
-                            <p class="p-news-card__title"><?php the_title(); ?></p>
-                            <?php if ($counter <= 1) : ?>
-                                <p class="p-news-card__text"><?php the_excerpt(); ?></p>
-                            <?php endif; ?>
-                            <time class="p-news-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
-                        </div>
-                        <?php
-                        $category = get_the_category();
-                        if ($category[0]) {
-                            echo '<p class="p-news-card__category c-ribbon">' . $category[0]->cat_name . '</p>';
-                        }
-                        ?>
-                    </a>
+                            <div class="p-news-card__img">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="サムネイル画像">
+                            </div>
+                            <div class="p-news-card__content">
+                                <p class="p-news-card__title"><?php the_title(); ?></p>
+                                <?php if ($counter <= 1) : ?>
+                                    <p class="p-news-card__text"><?php the_excerpt(); ?></p>
+                                <?php endif; ?>
+                                <time class="p-news-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
+                            </div>
+                            <?php
+                            $category = get_the_category();
+                            if ($category[0]) {
+                                echo '<p class="p-news-card__category c-ribbon">' . $category[0]->cat_name . '</p>';
+                            }
+                            ?>
+                        </a>
                     </article>
                 <?php
                 endwhile;
@@ -424,36 +458,25 @@
             <h2 class="c-title-en">access</h2>
             <p class="c-title-ja">アクセス</p>
         </div>
-        <div class="p-top-access__map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0370288636677!2d139.57802391591812!3d35.700706386509644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee39b555205f%3A0xabb26a0a2fbda595!2z44CSMTgwLTAwMDMg5p2x5Lqs6YO95q2m6JS16YeO5biC5ZCJ56Wl5a-65Y2X55S677yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1643101340312!5m2!1sja!2sjp" width="688" height="387" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="p-top-access__info">
-            <dl class="p-top-access__items">
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">住所</dt>
-                    <dd class="p-top-access__description">〒000-0000<br>東京都武蔵野市吉祥寺南町一丁目</dd>
-                </div>
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">営業時間</dt>
-                    <dd class="p-top-access__description">7:00〜21:00<br>※ラストオーダー 20:30</dd>
-                </div>
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">TEL</dt>
-                    <dd class="p-top-access__description">0123-456-789</dd>
-                </div>
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">定休日</dt>
-                    <dd class="p-top-access__description">水曜日</dd>
-                </div>
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">Mail</dt>
-                    <dd class="p-top-access__description">example@mail.com</dd>
-                </div>
-                <div class="p-top-access__item">
-                    <dt class="p-top-access__term">座席</dt>
-                    <dd class="p-top-access__description">テーブル20席 ／ カウンター席6席</dd>
-                </div>
-            </dl>
+        <div class="p-top-access__item">
+
+            <?php
+            $args = array(
+                'posts_per_page' => 1, // 表示する投稿数
+                'post_type' => array('custom_shop'), // 取得する投稿タイプのスラッグ
+                'order' => 'ASC', // 降順 or 昇順
+                'page_id' => 71,
+            );
+            $my_posts = get_posts($args);
+            ?>
+            <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
+
+                <?php get_template_part('templates/access-item'); ?>
+
+            <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
+
+
         </div>
     </div>
 </section>
