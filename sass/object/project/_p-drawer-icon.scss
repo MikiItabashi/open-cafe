@@ -1,0 +1,59 @@
+.p-drawer-icon__bars {
+    top: rem(10);
+    right: rem(10);
+    width: rem(60);
+    height: rem(60);
+    display: block;
+    border-radius: 50%;
+    position: fixed;
+    display: grid;
+    gap: rem(6);
+    align-content: center;
+    justify-content: center;
+}
+
+.p-drawer-icon__bar1,
+.p-drawer-icon__bar2,
+.p-drawer-icon__bar3 {
+    transition: transform 0.3s;
+    width: rem(27);
+    height: rem(2);
+    background: $text-light;
+}
+
+.p-drawer-icon {
+    position: fixed;
+    top: rem(10);
+    right: rem(10);
+    width: rem(60);
+    height: rem(60);
+    border-radius: 50%;
+    z-index: 11;
+    display: inline-block;
+    border: none;
+    transition: transform 0.5s ease 0s;
+    background: $main-color;
+    cursor: pointer;
+    &.is-active {
+        background: $text-light;
+        .p-drawer-icon__bars {
+            gap: 0;
+        }
+        .p-drawer-icon__bar1,
+        .p-drawer-icon__bar2,
+        .p-drawer-icon__bar3 {
+            background: $main-color;
+        }
+        .p-drawer-icon__bar1 {
+            transform: translateY(1px) rotate(-45deg);
+            top: rem(0);
+        }
+        .p-drawer-icon__bar2 {
+            display: none;
+        }
+        .p-drawer-icon__bar3 {
+            transform: translateY(-1px) rotate(45deg);
+            top: rem(0);
+        }
+    }
+}

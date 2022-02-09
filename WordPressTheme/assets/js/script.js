@@ -14,12 +14,52 @@ jQuery(function($) {
             }
         });
 
+
+        // ドロワーアイコンの表示設定
+        var drawer = $('.js-drawer-fade');
+
+        $(window).on('load', function() {
+            if ($(window).width() > 767) {
+                drawer.hide();
+            };
+        });
+        $(window).on('scroll', function() {
+            drawerFade();
+        });
+        $(window).on('resize', function() {
+            drawerFade();
+        });
+
+
+        function drawerFade() {
+            var windowSize = $(window).width();
+
+            if (windowSize > 767) {
+                if ($(this).scrollTop() > 700) {
+                    // 指定px以上のスクロールでボタンを表示
+                    drawer.fadeIn();
+                } else {
+                    // 画面が指定pxより上ならボタンを非表示
+                    drawer.fadeOut();
+                };
+            } else {
+                drawer.show();
+            }
+        };
+
         /* ドロワー */
-        jQuery(".js-drawer").on("click", function(e) {
+        jQuery('.p-drawer-icon').on('click', function(e) {
             e.preventDefault();
-            let targetClass = jQuery(this).attr("data-target");
-            jQuery("." + targetClass).toggleClass("is-checked");
+            jQuery('.p-drawer-icon').toggleClass('is-active');
+            jQuery('.p-drawer-content').toggleClass('is-active');
+            jQuery('.p-drawer-background').toggleClass('is-active');
             return false;
+        });
+        jQuery('.p-drawer-content__item').on('click', function(e) {
+            jQuery('.p-drawer-icon').trigger('click');
+        });
+        jQuery('.p-drawer-background').on('click', function(e) {
+            jQuery('.p-drawer-icon').trigger('click');
         });
 
         /* スムーススクロール */
@@ -43,16 +83,7 @@ jQuery(function($) {
             return false;
         });
 
-        /* 電話リンク */
-        let ua = navigator.userAgent;
-        if (ua.indexOf("iPhone") < 0 && ua.indexOf("Android") < 0) {
-            jQuery('a[href^="tel:"]')
-                .css("cursor", "default")
-                .on("click", function(e) {
-                    e.preventDefault();
-                });
-        }
-
+        // swiper
         const swiper = new Swiper('.swiper', {
             // Optional parameters
             direction: 'horizontal',

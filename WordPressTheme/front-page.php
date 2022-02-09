@@ -57,23 +57,7 @@
             </li>
         </ul>
         <div class="p-main-nav__sns p-sns">
-            <ul class="p-sns__items">
-                <li class="p-sns__item">
-                    <a href="#" class="trans">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="p-sns__item">
-                    <a href="#" class="trans">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="p-sns__item">
-                    <a href="#" class="trans">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </li>
-            </ul>
+            <?php get_template_part('templates/sns'); ?>
         </div>
     </div>
 
@@ -82,74 +66,89 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="slide-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="main-view">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="main-view">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1-sp.jpg" alt="main-view">
+                        </picture>
+
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv2.jpg" alt="main-view">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri() ?>/assets/img/mv2.jpg" alt="main-view">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv2-sp.jpg" alt="main-view">
+                        </picture>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv3.jpg" alt="main-view">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri() ?>/assets/img/mv3.jpg" alt="main-view">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv3-sp.jpg" alt="main-view">
+                        </picture>
                     </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        <p class="p-slider__text">パスタとコーヒーがとってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
-
-        <?php
-        $args = array(
-            'posts_per_page' => 1, // 1件取得
-            'post_type' => 'post', // 投稿タイプ
-            'tag' => 'pickup', // pickupタグがついたものを
-            'orderby' => 'DESC', // 新しい順に
-        );
-
-        $pickup_pages = new WP_Query($args);
-        if ($pickup_pages->have_posts()) :
-            while ($pickup_pages->have_posts()) : $pickup_pages->the_post();
-        ?>
-
-                <article class="p-slider__news p-puckup-news">
-                    <a href="<?php the_permalink(); ?>" class="p-puckup-news__link">
-                        <div class="p-puckup-news__container">
-                            <div class="p-puckup-news__img">
-                                <?php
-                                if (has_post_thumbnail()) {
-                                    // アイキャッチ画像が設定されてれば大サイズで表示
-                                    the_post_thumbnail('large');
-                                } else {
-                                    // なければnoimage画像をデフォルトで表示
-                                    echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/mv1.jpg" alt="サムネイル画像">';
-                                } ?>
-                            </div>
-                            <div class="p-puckup-news__content">
-                                <time class="p-puckup-news__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
-                                <p class="p-puckup-news__title"><?php the_title(); ?></p>
-                            </div>
-                            <div class="p-puckup-news__baloon">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_balloon-pickup.svg" alt="Pick up ニュース！">
-                            </div>
-
-                            <?php
-                            $category = get_the_category();
-                            if ($category[0]) {
-                                echo '<p class="p-puckup-news__category c-ribbon">' . $category[0]->cat_name . '</p>';
-                            }
-                            ?>
-                        </div>
-                    </a>
-                </article>
+        <div class="p-slider__content">
+            
+        <div class="p-slider__logo u-mobile">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo_light.svg" alt="Open Cafe">
+        </div>
+            <p class="p-slider__text">パスタとコーヒーがとってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
 
             <?php
-            endwhile;
-            wp_reset_postdata();
-            ?>
-        <?php endif; ?>
+            $args = array(
+                'posts_per_page' => 1, // 1件取得
+                'post_type' => 'post', // 投稿タイプ
+                'tag' => 'pickup', // pickupタグがついたものを
+                'orderby' => 'DESC', // 新しい順に
+            );
 
+            $pickup_pages = new WP_Query($args);
+            if ($pickup_pages->have_posts()) :
+                while ($pickup_pages->have_posts()) : $pickup_pages->the_post();
+            ?>
+
+                    <article class="p-slider__news p-puckup-news">
+                        <a href="<?php the_permalink(); ?>" class="p-puckup-news__link">
+                            <div class="p-puckup-news__container">
+                                <div class="p-puckup-news__img">
+                                    <?php
+                                    if (has_post_thumbnail()) {
+                                        // アイキャッチ画像が設定されてれば大サイズで表示
+                                        the_post_thumbnail('large');
+                                    } else {
+                                        // なければnoimage画像をデフォルトで表示
+                                        echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/mv1.jpg" alt="サムネイル画像">';
+                                    } ?>
+                                </div>
+                                <div class="p-puckup-news__content">
+                                    <time class="p-puckup-news__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
+                                    <p class="p-puckup-news__title"><?php the_title(); ?></p>
+                                </div>
+                                <div class="p-puckup-news__baloon">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_balloon-pickup.svg" alt="Pick up ニュース！">
+                                </div>
+
+                                <?php
+                                $category = get_the_category();
+                                if ($category[0]) {
+                                    echo '<p class="p-puckup-news__category c-ribbon">' . $category[0]->cat_name . '</p>';
+                                }
+                                ?>
+                            </div>
+                        </a>
+                    </article>
+
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 

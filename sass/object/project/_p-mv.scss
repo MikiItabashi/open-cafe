@@ -15,8 +15,14 @@
 
 .p-mv__nav {
     width: 15.625%;
+    @include mq('sp') {
+        display: none;
+    }
 }
 
 .p-mv__slider {
     width: calc(100% - 15.625%);
+    @include mq('sp') {
+        width: 100%;
+    }
 }

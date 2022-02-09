@@ -100,21 +100,10 @@
 
 .p-top-set__img {
     width: 100%;
-    position: relative;
-    &::before {
-        padding-top: 27.142%; //height / width
-        display: block;
-        content: "";
-    }
     img {
-        position: absolute;
+        aspect-ratio: 700 / 191;
+        object-fit: cover;
         width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: contain;
-        object-position: center;
     }
 }
 

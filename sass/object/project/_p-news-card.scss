@@ -11,23 +11,10 @@
 
 .p-news-card__img {
     width: 100%;
-    position: relative;
-    overflow: hidden;
-    &::before {
-        padding-top: 61.583%; //height / width
-        display: block;
-        content: "";
-    }
     img {
-        transition: 0.3s transform;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        aspect-ratio: 518 / 319;
         object-fit: cover;
-        object-position: center;
+        width: 100%;
     }
 }
 
