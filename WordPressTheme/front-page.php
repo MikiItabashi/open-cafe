@@ -93,11 +93,11 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="p-slider__content">
-            
-        <div class="p-slider__logo u-mobile">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo_light.svg" alt="Open Cafe">
-        </div>
-            <p class="p-slider__text">パスタとコーヒーがとってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
+
+            <div class="p-slider__logo u-mobile">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo_light.svg" alt="Open Cafe">
+            </div>
+            <p class="p-slider__text">パスタとコーヒーが<br class="u-mobile">とってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
 
             <?php
             $args = array(
@@ -327,7 +327,7 @@
                 </div>
                 <h3 class="p-top-menu__subtitle">ドリンク</h3>
                 <div class="p-top-menu__drink p-drink-menu">
-                    <div class="p-drink-menu__img">
+                    <div class="p-drink-menu__img u-desktop">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_coffee.jpg" alt="コーヒーの写真">
                     </div>
                     <div class="p-drink-menu__block">

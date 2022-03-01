@@ -21,6 +21,14 @@
         bottom: 0;
         z-index: 3;
     }
+    @include mq('sp') {
+        &::before {
+            width: rem(126);
+            height: rem(114);
+            left: rem(-30);
+            bottom: rem(45);
+        }
+    }
 }
 
 .p-footer__sns {}

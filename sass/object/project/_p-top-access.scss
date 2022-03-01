@@ -19,6 +19,14 @@
         top: rem(-150);
         z-index: 3;
     }
+    @include mq('sp') {
+        &::after {
+            width: rem(188);
+            height: rem(180);
+            right: rem(-40);
+            top: rem(-80);
+        }
+    }
 }
 
 .p-top-access__title {
@@ -36,6 +44,15 @@
         right: calc(50% + #{rem(100)});
         top: rem(-105);
         z-index: 3;
+    }
+    @include mq('sp') {
+        &::after {
+            width: rem(200);
+            height: rem(173);
+            left: rem(-60);
+            right: initial;
+            top: rem(-130);
+        }
     }
 }
 
@@ -60,6 +77,12 @@
         top: 0;
         left: 0;
     }
+    @include mq('sp') {
+        padding-top: 54.9406%;
+        &::after {
+            border: 5px solid $text-light;
+        }
+    }
 }
 
 .p-access-item__info {
@@ -70,6 +93,10 @@
     display: grid;
     gap: rem(40) rem(24);
     grid-template-columns: 1fr 1fr;
+    @include mq('sp') {
+        gap: rem(20);
+        grid-template-columns: 1fr;
+    }
 }
 
 .p-access-item__item {

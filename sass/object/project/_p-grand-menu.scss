@@ -17,6 +17,11 @@
         object-fit: cover;
         width: 100%;
     }
+    @include mq('sp') {
+        &::after {
+            border: 5px solid $text-light;
+        }
+    }
 }
 
 .p-grand-menu__title {
@@ -24,10 +29,19 @@
     font-size: rem(20);
     font-weight: 700;
     line-height: (29 / 20);
+    @include mq('sp') {
+        margin-top: rem(8);
+        font-size: rem(14);
+        line-height: (20 / 14);
+    }
 }
 
 .p-grand-menu__price {
     font-family: $font-family-third;
     font-size: rem(32);
     line-height: (44 / 32);
+    @include mq('sp') {
+        font-size: rem(24);
+        line-height: (33 / 24);
+    }
 }

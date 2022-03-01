@@ -13,21 +13,38 @@
     margin-top: rem(16);
     display: flex;
     gap: rem(12);
+    @include mq('sp') {
+        margin-top: rem(8);
+        gap: rem(6);
+    }
 }
 
 .p-set-item__number {
-    display: inline-block;
     background: $text-dark;
     color: $text-light;
     font-family: $font-family-fourth;
     font-size: rem(32);
-    line-height: (39 / 32);
-    padding: rem(5) rem(14);
     text-transform: uppercase;
+    width: rem(49);
+    height: rem(49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mq('sp') {
+        font-size: rem(19);
+        width: rem(24);
+        height: rem(24);
+    }
 }
 
 .p-set-item__name {
     font-size: rem(18);
     font-weight: 700;
     line-height: (26 / 18);
+    width: calc(100% - #{rem(49)} - #{rem(12)});
+    @include mq('sp') {
+        font-size: rem(14);
+        line-height: (20 / 14);
+        width: calc(100% - #{rem(24)} - #{rem(6)});
+    }
 }

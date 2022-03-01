@@ -2,4 +2,8 @@
     font-size: rem(28);
     font-weight: 700;
     line-height: (60 / 28);
+    @include mq('sp') {
+        font-size: rem(20);
+        line-height: (40 / 20);
+    }
 }

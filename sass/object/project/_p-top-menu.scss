@@ -10,6 +10,12 @@
         bottom: 0;
         z-index: -1;
     }
+    @include mq('sp') {
+        &::before {
+            width: 73.0666%;
+            height: 88.16%;
+        }
+    }
 }
 
 .p-top-menu__inner {
@@ -26,6 +32,14 @@
         left: rem(-30);
         top: rem(-228);
         z-index: 3;
+    }
+    @include mq('sp') {
+        &::after {
+            width: rem(129);
+            height: rem(141);
+            left: rem(-30);
+            top: rem(-175);
+        }
     }
 }
 
@@ -59,6 +73,11 @@
         border-top: 2px solid $text-dark;
         border-bottom: 2px solid $text-dark;
     }
+    @include mq('sp') {
+        font-size: rem(20);
+        line-height: (29 / 20);
+        padding: rem(2) rem(10);
+    }
 }
 
 .p-top-menu__items {
@@ -67,6 +86,12 @@
     display: grid;
     gap: rem(36) rem(40);
     grid-template-columns: 1fr 1fr 1fr;
+    @include mq('sp') {
+        margin-top: rem(20);
+        margin-bottom: rem(40);
+        gap: rem(19) rem(20);
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .p-top-menu__item {}
@@ -74,4 +99,14 @@
 .p-top-menu__btn {
     text-align: center;
     margin-top: rem(60);
+    @include mq('sp') {
+        margin-top: rem(40);
+    }
+}
+
+.p-top-menu__drink {
+    margin-top: rem(24);
+    @include mq('sp') {
+        margin: rem(20) rem(20) 0;
+    }
 }

@@ -11,6 +11,11 @@
         right: 0;
         bottom: 0;
     }
+    @include mq('sp') {
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .p-mv__nav {

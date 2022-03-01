@@ -12,6 +12,15 @@
     width: 100%;
     height: 100%;
     inset: 0;
+    @include mq('sp') {
+        padding: 0 rem(20);
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.p-slider__logo {
+    margin-top: rem(10);
 }
 
 .p-slider__text {
@@ -19,14 +28,16 @@
     color: $text-light;
     font-size: rem(20);
     font-weight: 700;
+    letter-spacing: 0.14em;
     bottom: rem(40);
     left: rem(56);
     z-index: 1;
     @include mq('sp') {
         position: relative;
         font-size: rem(16);
-        left: rem(20);
         top: 0;
+        left: 0;
+        margin-top: rem(60);
     }
 }
 
@@ -36,6 +47,14 @@
     right: rem(20);
     z-index: 1;
     max-width: rem(388);
+    @include mq('sp') {
+        position: relative;
+        bottom: initial;
+        right: initial;
+        margin-top: auto;
+        max-width: 100%;
+        margin-bottom: rem(32);
+    }
 }
 
 // swiper
