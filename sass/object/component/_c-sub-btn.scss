@@ -1,0 +1,18 @@
+.c-sub-btn {
+    display: inline-block;
+    padding: rem(8) rem(24);
+    background: $text-dark;
+    color: $text-light;
+    font-size: rem(14);
+    font-weight: 700;
+    border: 1px solid $text-dark;
+    transition: background-color .3s, color .3s;
+    &:hover {
+        background: $text-light;
+        color: $text-dark;
+    }
+    @include mq('sp') {
+        padding: rem(6) rem(16);
+        font-size: rem(12);
+    }
+}

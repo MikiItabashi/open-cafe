@@ -1,0 +1,84 @@
+.p-gift-wrapping {
+    border: 4px solid $main-color;
+    position: relative;
+    background: $text-light;
+    padding: rem(70) rem(50);
+    display: flex;
+    gap: rem(60);
+    &::before {
+        position: absolute;
+        content: "";
+        width: calc(100% - #{rem(10)} * 2);
+        height: calc(100% - #{rem(10)} * 2);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid $main-color;
+    }
+    @include mq('sp') {
+        padding: rem(40);
+        flex-direction: column;
+        gap: rem(40);
+    }
+}
+
+.p-gift-wrapping__body {
+    width: 50%;
+    @include mq('sp') {
+        width: 100%;
+    }
+}
+
+.p-gift-wrapping__heading {
+    color: $main-color;
+    padding-bottom: rem(24);
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: (40 / 24);
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: rem(10);
+        background-image: url(../img/wrapping-dotted.svg);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 3;
+        bottom: 0;
+    }
+    @include mq('sp') {
+        font-size: rem(16);
+        line-height: (28 / 16);
+        &::before {
+            height: rem(3);
+            background-image: url(../img/wrapping-dotted-sp.svg);
+        }
+    }
+}
+
+.p-gift-wrapping__text {
+    margin-top: rem(60);
+    color: $text-dark;
+    font-weight: 500;
+    @include mq('sp') {
+        margin-top: rem(24);
+        font-size: rem(12);
+    }
+}
+
+.p-gift-wrapping__img {
+    width: 50%;
+    img {
+        aspect-ratio: (460 / 300);
+        object-fit: cover;
+        width: 100%;
+    }
+    @include mq('sp') {
+        width: 100%;
+        img {
+            aspect-ratio: (255 / 165);
+        }
+    }
+}

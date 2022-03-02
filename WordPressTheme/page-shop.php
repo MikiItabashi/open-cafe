@@ -17,7 +17,7 @@
             <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
 
                 <div class="p-shop__item">
-                    <h2 class="p-shop__title">open cafe <?php the_title(); ?></h2>
+                    <h2 class="p-shop__title">open cafe　<?php the_title(); ?></h2>
                     <?php get_template_part('templates/access-item'); ?>
 
                 </div>
