@@ -1,8 +1,8 @@
-.p-top-access {
+.p-footer-access {
     background: $base-color;
 }
 
-.p-top-access__inner {
+.p-footer-access__inner {
     padding-top: rem(80);
     padding-bottom: rem(80);
     position: relative;
@@ -29,7 +29,7 @@
     }
 }
 
-.p-top-access__title {
+.p-footer-access__title {
     text-align: center;
     position: relative;
     &::after {

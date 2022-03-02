@@ -1,0 +1,6 @@
+.l-footer-access {
+    margin-top: rem(176);
+    @include mq('sp') {
+        margin-top: rem(160);
+    }
+}

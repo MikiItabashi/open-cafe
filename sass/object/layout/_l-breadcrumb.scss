@@ -1,0 +1,6 @@
+.l-breadcrumb {
+    margin-bottom: rem(80);
+    @include mq('sp') {
+        margin-bottom: rem(53);
+    }
+}

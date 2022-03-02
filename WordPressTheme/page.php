@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
-page
+<?php get_template_part('templates/sub-head'); ?>
+
 
 <?php get_footer(); ?>

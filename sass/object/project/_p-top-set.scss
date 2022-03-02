@@ -131,6 +131,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     @include mq('sp') {
         grid-template-columns: 1fr 1fr;
+        max-width: rem(540);
+        margin: 0 auto;
     }
 }
 
@@ -153,10 +155,11 @@
     gap: rem(40);
     border-radius: rem(8);
     @include mq('sp') {
-        margin-top: rem(20);
+        margin: rem(20) auto;
         padding: rem(20) rem(7);
         gap: rem(20);
         flex-direction: column;
+        max-width: rem(540);
     }
 }
 

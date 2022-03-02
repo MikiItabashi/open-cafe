@@ -1,0 +1,115 @@
+.p-concept {}
+
+.p-concept__content {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        background: $base-color;
+        z-index: -1;
+    }
+}
+
+.p-concept__inner {
+    display: grid;
+    gap: rem(71);
+    grid-template-columns: rem(441) 1fr;
+    align-items: center;
+    @include mq('sp') {
+        gap: rem(40);
+        grid-template-columns: 1fr;
+    }
+}
+
+.p-concept__body {}
+
+.p-concept__heading {}
+
+.p-concept__text {
+    margin-top: rem(40);
+}
+
+.p-concept__img {}
+
+.p-concept__content:nth-child(1) {
+    padding-bottom: rem(100);
+    &::before {
+        width: 76.875%;
+        height: rem(200);
+        right: 0;
+        bottom: 0;
+    }
+    @include mq('sp') {
+        padding-bottom: rem(50);
+        &::before {
+            width: 89.333%;
+            height: rem(100);
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.p-concept__content:nth-child(2) {
+    margin-top: rem(100);
+    padding-bottom: rem(60);
+    &::before {
+        width: 45.3125%;
+        height: rem(437);
+        left: 0;
+        bottom: 0;
+    }
+    .p-concept__inner {
+        grid-template-columns: 1fr rem(441);
+    }
+    .p-concept__img {
+        order: 1;
+    }
+    .p-concept__body {
+        order: 2;
+    }
+    @include mq('sp') {
+        margin-top: rem(80);
+        padding-bottom: rem(22);
+        &::before {
+            width: 75.7333%;
+            height: rem(227);
+            left: 0;
+            bottom: 0;
+        }
+        .p-concept__inner {
+            grid-template-columns: 1fr;
+        }
+        .p-concept__img,
+        .p-concept__body {
+            order: initial;
+        }
+    }
+}
+
+.p-concept__content:nth-child(3) {
+    margin-top: rem(100);
+    padding-top: rem(40);
+    padding-bottom: rem(80);
+    &::before {
+        width: 31.25%;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+    @include mq('sp') {
+        margin-top: rem(80);
+        padding-top: rem(18);
+        padding-bottom: rem(37);
+        &::before {
+            width: 49.0066%;
+            height: rem(335);
+            right: rem(20);
+            top: initial;
+            bottom: 0;
+        }
+        .p-concept__img {
+            width: 93.6305%;
+        }
+    }
+}
