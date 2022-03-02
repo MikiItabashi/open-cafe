@@ -1,0 +1,30 @@
+.p-shop {}
+
+.p-shop__inner {}
+
+.p-shop__items {}
+
+.p-shop__item {
+    &:not(:last-child) {
+        margin-bottom: rem(120);
+        @include mq('sp') {
+            margin-bottom: rem(60);
+        }
+    }
+}
+
+.p-shop__title {
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: (35 / 24);
+    margin-bottom: rem(24);
+    padding-left: rem(16);
+    border-left: 6px solid $main-color;
+    text-transform: uppercase;
+    @include mq('sp') {
+        font-size: rem(20);
+        line-height: (29 / 20);
+        margin-bottom: rem(20);
+        padding-left: rem(8);
+    }
+}

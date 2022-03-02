@@ -9,20 +9,22 @@
                         <dd class="p-access-item__description"><?php the_field('address'); ?></dd>
                     </div>
                     <div class="p-access-item__item">
-                        <dt class="p-access-item__term">営業時間</dt>
-                        <dd class="p-access-item__description"><?php the_field('time'); ?></dd>
-                    </div>
-                    <div class="p-access-item__item">
                         <dt class="p-access-item__term">TEL</dt>
                         <dd class="p-access-item__description"><?php the_field('phone'); ?></dd>
                     </div>
                     <div class="p-access-item__item">
-                        <dt class="p-access-item__term">定休日</dt>
-                        <dd class="p-access-item__description"><?php the_field('holiday'); ?></dd>
-                    </div>
-                    <div class="p-access-item__item">
                         <dt class="p-access-item__term">Mail</dt>
                         <dd class="p-access-item__description"><?php the_field('email'); ?></dd>
+                    </div>
+                </dl>
+                <dl class="p-access-item__items">
+                    <div class="p-access-item__item">
+                        <dt class="p-access-item__term">営業時間</dt>
+                        <dd class="p-access-item__description"><?php the_field('time'); ?></dd>
+                    </div>
+                    <div class="p-access-item__item">
+                        <dt class="p-access-item__term">定休日</dt>
+                        <dd class="p-access-item__description"><?php the_field('holiday'); ?></dd>
                     </div>
                     <div class="p-access-item__item">
                         <dt class="p-access-item__term">座席</dt>
