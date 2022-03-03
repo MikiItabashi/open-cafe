@@ -46,3 +46,24 @@
         max-width: rem(295);
     }
 }
+
+.c-btn--input {
+    position: relative;
+    max-width: rem(280);
+    width: 100%;
+    display: inline-block;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px $text-dark solid;
+        border-right: 1px $text-dark solid;
+        top: 0;
+        left: 0;
+        transition: 0.3s top, 0.3s left;
+    }
+    .c-btn {
+        position: initial;
+    }
+}

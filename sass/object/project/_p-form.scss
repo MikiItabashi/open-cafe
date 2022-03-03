@@ -1,0 +1,141 @@
+.p-form {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        box-shadow: none;
+        border: 1px solid $main-color;
+        border-radius: rem(6);
+        background: $text-light;
+        padding: rem(12) rem(16);
+        appearance: none;
+        color: inherit;
+        font-family: inherit;
+        width: 100%;
+        font-size: rem(16);
+        font-weight: 500;
+    }
+    textarea {
+        height: rem(240);
+        resize: vertical;
+    }
+    // input[type="submit"] {
+    //     box-shadow: none;
+    //     appearance: none;
+    //     font-family: inherit;
+    //     border: none;
+    // }
+}
+
+.p-form__items {}
+
+.p-form__item {
+    display: flex;
+    justify-content: start;
+    &:not(:last-child) {
+        margin-bottom: rem(40);
+    }
+    @include mq('sp') {
+        display: block;
+    }
+}
+
+.p-form__label {
+    width: rem(200);
+    font-weight: 700;
+    font-size: rem(16);
+    margin-top: rem(13);
+    @include mq('sp') {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: rem(8);
+    }
+}
+
+.p-form__required {
+    background: $accent-color;
+    color: $text-light;
+    font-size: rem(11);
+    margin-left: rem(8);
+    padding: rem(2) rem(6);
+    border-radius: rem(2);
+}
+
+.p-form__input {
+    width: calc(100% - #{rem(200)});
+    @include mq('sp') {
+        width: 100%;
+    }
+}
+
+.p-form__text {
+    margin-top: rem(40);
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: (20 / 14);
+    @include mq('sp') {
+        margin-top: rem(20);
+    }
+}
+
+.p-form__btn {
+    text-align: center;
+    margin-top: rem(40);
+}
+
+.p-form__input label {
+    width: 100%;
+    font-size: rem(16);
+    font-weight: 500;
+    &:not(:last-child) {
+        margin-bottom: rem(16);
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+span {
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0 0 rem(34);
+    position: relative;
+}
+
+input[type="radio"]+span::before {
+    -webkit-transform: translateY(-50%);
+    background: $text-light;
+    border: 1px solid $main-color;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: rem(24);
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(24);
+}
+
+input[type="radio"]+span::after {
+    -webkit-transform: translateY(-50%);
+    background: $accent-color;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    content: "";
+    height: rem(12);
+    left: rem(6);
+    opacity: 0;
+    padding: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+    width: rem(12);
+}
+
+input[type="radio"]:checked+span::after {
+    opacity: 1;
+}
