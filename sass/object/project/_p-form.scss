@@ -1,7 +1,7 @@
 .p-form {
     input[type="text"],
     input[type="email"],
-    input[type="number"],
+    input[type="tel"],
     textarea {
         box-shadow: none;
         border: 1px solid $main-color;
@@ -19,12 +19,6 @@
         height: rem(240);
         resize: vertical;
     }
-    // input[type="submit"] {
-    //     box-shadow: none;
-    //     appearance: none;
-    //     font-family: inherit;
-    //     border: none;
-    // }
 }
 
 .p-form__items {}
@@ -83,15 +77,6 @@
     margin-top: rem(40);
 }
 
-.p-form__input label {
-    width: 100%;
-    font-size: rem(16);
-    font-weight: 500;
-    &:not(:last-child) {
-        margin-bottom: rem(16);
-    }
-}
-
 input[type="radio"] {
     display: none;
 }
@@ -138,4 +123,18 @@ input[type="radio"]+span::after {
 
 input[type="radio"]:checked+span::after {
     opacity: 1;
+}
+
+.wpcf7-spinner {
+    display: none;
+}
+
+.wpcf7-list-item {
+    display: inline-block;
+    width: 100%;
+    font-size: rem(16);
+    font-weight: 500;
+    &:not(:last-child) {
+        margin-bottom: rem(16);
+    }
 }

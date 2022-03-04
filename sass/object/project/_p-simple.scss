@@ -1,0 +1,21 @@
+.p-simple {}
+
+.p-simple__inner {}
+
+.p-simple__heading {
+    text-align: center;
+    font-size: rem(28);
+    font-weight: 700;
+    @include mq('sp') {
+        font-size: rem(20);
+    }
+}
+
+.p-simple__text {
+    margin-top: rem(28);
+    font-weight: 500;
+}
+
+.p-simple__text--center {
+    text-align: center;
+}

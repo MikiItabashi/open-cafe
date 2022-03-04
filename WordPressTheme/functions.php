@@ -149,3 +149,19 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+
+
+
+
+// サンクスページ
+add_action('wp_footer', 'add_thanks_page');
+function add_thanks_page() {
+echo <<< EOD
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+	location = 'http://opencafe.local/contact/thanks';
+}, false );
+</script>
+EOD;
+}
