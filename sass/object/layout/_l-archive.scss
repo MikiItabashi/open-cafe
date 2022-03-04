@@ -1,0 +1,10 @@
+.l-archive {
+    display: grid;
+    gap: rem(72);
+    grid-template-columns: 728fr 300fr;
+    // grid-template-columns: 1fr 1fr;
+    @include mq('sp') {
+        gap: rem(60);
+        grid-template-columns: 1fr;
+    }
+}

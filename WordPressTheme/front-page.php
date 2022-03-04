@@ -405,9 +405,9 @@
             <?php
             $args = array(
                 'posts_per_page' => 5, //全件取得
-                'post_type' => 'post', //取得対象は固定ページ
-                'orderby' => 'menu_order', //並び順は管理画面で指定した並び順
-                'order' => 'ASC', //昇順
+                'post_type' => 'post', //取得対象は投稿
+                'orderby' => 'date', //並び順は管理画面で指定した並び順
+                'order' => 'DESC', //昇順
             );
             $common_pages = new WP_Query($args);
             if ($common_pages->have_posts()) :
@@ -415,12 +415,20 @@
                     $counter++;
             ?>
                     <article class="p-top-news__item">
-                        <a href="<?php the_permalink(); ?>" class="p-top-news__link p-news-card
+                        <a href="<?php the_permalink(); ?>" class="p-news-card
                     <?php if ($counter <= 1) {
                         echo 'p-news-card--big';
                     }; ?>">
                             <div class="p-news-card__img">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/mv1.jpg" alt="サムネイル画像">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    // アイキャッチ画像が設定されてれば大サイズで表示
+                                    the_post_thumbnail('large');
+                                } else {
+                                    // なければnoimage画像をデフォルトで表示
+                                    echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/mv1.jpg" alt="サムネイル画像">';
+                                }
+                                ?>
                             </div>
                             <div class="p-news-card__content">
                                 <p class="p-news-card__title"><?php the_title(); ?></p>

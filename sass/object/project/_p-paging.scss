@@ -1,0 +1,51 @@
+.p-paging {
+    position: relative;
+    text-align: center;
+    margin-top: rem(32);
+}
+
+.p-paging__link {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: rem(17);
+    font-size: rem(16);
+    font-weight: 700;
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url(../img/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(7);
+        height: rem(12);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.p-paging__back {
+    display: inline-block;
+    font-size: rem(16);
+    font-weight: 700;
+    padding: rem(12) rem(36);
+    color: $main-color;
+    border: 1px solid $main-color;
+    text-align: center;
+}
+
+.p-paging__link--next {
+    right: 0;
+    &::before {
+        right: 0;
+    }
+}
+
+.p-paging__link--prev {
+    left: 0;
+    &::before {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+    }
+}

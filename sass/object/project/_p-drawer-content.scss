@@ -11,9 +11,15 @@
     transform: translateX(105%);
     transition: transform 0.3s;
     overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     &.is-active {
         transform: translateX(0);
     }
+}
+
+.p-drawer-content::-webkit-scrollbar {
+    display: none;
 }
 
 .p-drawer-content__logo {

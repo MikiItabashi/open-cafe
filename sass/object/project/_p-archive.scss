@@ -1,0 +1,19 @@
+.p-archive {}
+
+.p-archive__inner {}
+
+.p-archive__main {}
+
+.p-archive__heading {
+    font-size: rem(24);
+    font-weight: 700;
+    margin-bottom: rem(24);
+}
+
+.p-archive__items {
+    display: grid;
+    gap: rem(40) rem(32);
+    grid-template-columns: 1fr 1fr;
+}
+
+.p-archive__item {}
