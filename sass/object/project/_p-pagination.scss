@@ -1,0 +1,45 @@
+.p-pagination {
+    text-align: center;
+    margin-top: rem(40);
+    display: flex;
+    justify-content: center;
+    a,
+    span {
+        display: inline-block;
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        border: 1px solid $main-color;
+        color: $main-color;
+        background: $text-light;
+        font-size: rem(16);
+        font-weight: 500;
+        margin: 0 rem(6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span {
+        color: $text-light;
+        background: $main-color;
+    }
+    .dots {
+        border: none;
+        background: inherit;
+        color: inherit;
+        width: rem(20);
+    }
+    img {
+        width: rem(7);
+        height: rem(12);
+        object-fit: contain;
+    }
+    @include mq('sp') {
+        a,
+        span {
+            width: rem(30);
+            height: rem(30);
+            margin: 0 rem(3);
+        }
+    }
+}

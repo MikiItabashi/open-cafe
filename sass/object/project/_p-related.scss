@@ -1,0 +1,24 @@
+.p-related {}
+
+.p-related__title {
+    text-align: center;
+    color: $main-color;
+    font-size: rem(28);
+    font-weight: 700;
+}
+
+.p-related__items {
+    margin-top: rem(60);
+    display: grid;
+    gap: rem(40) rem(45);
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.p-related__item {
+    .p-news-card__title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+}

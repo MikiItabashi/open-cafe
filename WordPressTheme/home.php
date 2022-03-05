@@ -16,30 +16,32 @@
                     endwhile;
                     ?>
 
-                    <!-- pagination -->
-                    <?php if (paginate_links()) : //ページが1ページ以上あれば以下を表示 
-                    ?>
-                        <div class="pagination">
-                            <?php
-                            echo
-                            paginate_links(
-                                array(
-                                    'end_size' => 0,
-                                    'mid_size' => 1, //もし2に変更した場合、両方のファイルを修正する必要がある
-                                    'prev_next' => true,
-                                    'prev_text' => '<i class="fas fa-angle-left"></i>',
-                                    'next_text' => '<i class="fas fa-angle-right"></i>',
-                                )
-                            );
-                            ?>
-                        </div>
-                    <?php endif; ?>
+
 
 
                 <?php else : ?>
                     <p>記事が見つかりませんでした</p>
                 <?php endif; ?>
             </div>
+
+            <!-- pagination -->
+            <?php if (paginate_links()) : //ページが1ページ以上あれば以下を表示 
+            ?>
+                <div class="p-pagination">
+                    <?php
+                    echo
+                    paginate_links(
+                        array(
+                            'end_size' => 0,
+                            'mid_size' => 1,
+                            'prev_next' => true,
+                            'prev_text' => '<img src="' . get_template_directory_uri() . '/assets/img/arrow-prev.svg" alt="<">',
+                            'next_text' => '<img src="' . get_template_directory_uri() . '/assets/img/arrow-next.svg" alt=">">',
+                        )
+                    );
+                    ?>
+                </div>
+            <?php endif; ?>
         </section>
         <?php get_sidebar(); ?>
     </div>

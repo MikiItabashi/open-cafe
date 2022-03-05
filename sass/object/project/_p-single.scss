@@ -6,10 +6,12 @@
     width: 100%;
     position: relative;
     img {
-        // aspect-ratio: (430 / 688);
         aspect-ratio: (688 / 430);
         object-fit: cover;
         width: 100%;
+        @include mq('sp') {
+            aspect-ratio: (355 / 209);
+        }
     }
 }
 
@@ -19,6 +21,10 @@
     font-size: rem(28);
     font-weight: 700;
     line-height: (40 / 28);
+    @include mq('sp') {
+        font-size: rem(20);
+        line-height: (28 / 20);
+    }
 }
 
 .p-single__info {
@@ -26,6 +32,9 @@
     margin-top: rem(40);
     font-size: rem(14);
     font-weight: 700;
+    @include mq('sp') {
+        margin-top: rem(24);
+    }
 }
 
 .p-single__date {
@@ -40,9 +49,7 @@
 
 .p-single__body {
     margin-top: rem(40);
-    p {
-        font-weight: 500;
-    }
+    font-weight: 500;
     img {
         width: 100%;
         margin: rem(40) 0;
@@ -85,12 +92,43 @@
     blockquote {
         background: #F8F8F8;
         padding: rem(40);
-        font-weight: 500;
         cite {
             display: block;
             margin-top: rem(20);
             text-align: right;
             font-size: rem(14);
         }
+    }
+    @include mq('sp') {
+        h2 {
+            font-size: rem(18);
+            line-height: (28 / 18);
+        }
+        h3 {
+            font-size: rem(16);
+            line-height: (24 / 16);
+        }
+        h4 {
+            font-size: rem(14);
+            line-height: (24 / 14);
+        }
+        ul,
+        ol {
+            padding-left: rem(40);
+        }
+        blockquote {
+            padding: rem(24);
+        }
+    }
+}
+
+.p-single__paging {
+    margin-top: rem(32);
+}
+
+.p-single__related {
+    margin-top: rem(120);
+    @include mq('sp') {
+        margin-top: rem(100);
     }
 }

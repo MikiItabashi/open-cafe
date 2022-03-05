@@ -36,7 +36,7 @@ if (have_posts()) :
                     ?>
                 </div>
 
-                <div class="p-paging">
+                <div class="p-single__paging p-paging">
                     <?php
                     $next_post = get_next_post();
                     $prev_post = get_previous_post();
@@ -56,6 +56,57 @@ if (have_posts()) :
                     <?php
                     endif;
                     ?>
+                </div>
+
+                <div class="p-single__related p-related">
+                    <p class="p-related__title">関連記事</p>
+                    <div class="p-related__items">
+
+                        <?php
+                        $args = array(
+                            'category__in' => $cat_id , // カテゴリーのIDで記事を取得
+                            'posts_per_page' => 6, //全件取得
+                            'post_type' => 'post', //取得対象は投稿
+                            'orderby' => 'date', //並び順は管理画面で指定した並び順
+                            'order' => 'DESC', //昇順
+                        );
+                        $common_pages = new WP_Query($args);
+                        if ($common_pages->have_posts()) :
+                            while ($common_pages->have_posts()) : $common_pages->the_post();
+                        ?>
+                                <article class="p-related__item">
+                                    <a href="<?php the_permalink(); ?>" class="p-news-card">
+                                        <div class="p-news-card__img">
+                                            <?php
+                                            if (has_post_thumbnail()) {
+                                                // アイキャッチ画像が設定されてれば大サイズで表示
+                                                the_post_thumbnail('large');
+                                            } else {
+                                                // なければnoimage画像をデフォルトで表示
+                                                echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/mv1.jpg" alt="サムネイル画像">';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="p-news-card__content">
+                                            <p class="p-news-card__title"><?php the_title(); ?></p>
+                                            <time class="p-news-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
+                                        </div>
+                                        <?php
+                                        $category = get_the_category();
+                                        if ($category[0]) {
+                                            echo '<p class="p-news-card__category c-ribbon">' . $category[0]->cat_name . '</p>';
+                                        }
+                                        ?>
+                                    </a>
+                                </article>
+                            <?php
+                            endwhile;
+                            wp_reset_postdata(); //メインクエリに戻す前にリセットする
+                            ?>
+                        <?php else : ?>
+                            <p>関連する記事がありません</p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
     <?php

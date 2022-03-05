@@ -8,12 +8,19 @@
     font-size: rem(24);
     font-weight: 700;
     margin-bottom: rem(24);
+    @include mq('sp') {
+        font-size: rem(20);
+        margin-bottom: rem(40);
+    }
 }
 
 .p-archive__items {
     display: grid;
     gap: rem(40) rem(32);
     grid-template-columns: 1fr 1fr;
+    @include mq('sp') {
+        gap: rem(24) rem(22);
+    }
 }
 
 .p-archive__item {}
