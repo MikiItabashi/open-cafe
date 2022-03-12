@@ -1,0 +1,33 @@
+.p-menu-item {}
+
+.p-menu-item__img {
+    width: 100%;
+    position: relative;
+    img {
+        aspect-ratio: 1;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.p-menu-item__name {
+    margin-top: rem(12);
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: (20 / 14);
+    @include mq('sp') {
+        margin-top: rem(8);
+        font-size: rem(14);
+        line-height: (20 / 14);
+    }
+}
+
+.p-menu-item__price {
+    font-family: $font-family-third;
+    font-size: rem(24);
+    line-height: (33 / 24);
+    @include mq('sp') {
+        font-size: rem(24);
+        line-height: (33 / 24);
+    }
+}

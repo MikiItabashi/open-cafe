@@ -102,5 +102,15 @@ jQuery(function($) {
             },
         });
 
+        // menu-tab
+        $(function() {
+            $('.c-tab-btn').on('click', function() {
+                var idx = $('.c-tab-btn').index(this);
+                $(this).addClass('c-tab-btn--active').siblings('.c-tab-btn').removeClass('c-tab-btn--active');
+                $(this).closest('.p-menu__tabs').nextAll('.p-menu__items').find('.p-menu__item').removeClass('is-show');
+                $('.p-menu__item').eq(idx).addClass('is-show');
+            });
+        });
+
     });
 });
