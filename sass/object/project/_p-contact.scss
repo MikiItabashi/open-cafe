@@ -12,13 +12,13 @@
 }
 
 .p-contact__text {
-    margin-top: rem(28);
+    margin-top: rem(16);
     font-weight: 500;
 }
 
 .p-contact__form {
-    margin-top: rem(80);
+    margin-top: rem(71);
     @include mq('sp') {
-        margin-top: rem(60);
+        margin-top: rem(53);
     }
 }

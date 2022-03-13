@@ -29,7 +29,7 @@
 
 .p-single__info {
     color: $main-color;
-    margin-top: rem(40);
+    margin-top: rem(35);
     font-size: rem(14);
     font-weight: 700;
     @include mq('sp') {
@@ -38,17 +38,17 @@
 }
 
 .p-single__date {
-    padding-right: rem(20);
+    padding-right: rem(23);
     border-right: 1px solid $main-color;
 }
 
 .p-single__category {
-    padding-left: rem(20);
+    padding-left: rem(23);
     display: inline-block;
 }
 
 .p-single__body {
-    margin-top: rem(40);
+    margin-top: rem(31);
     font-weight: 500;
     img {
         width: 100%;
@@ -127,8 +127,8 @@
 }
 
 .p-single__related {
-    margin-top: rem(120);
+    margin-top: rem(113);
     @include mq('sp') {
-        margin-top: rem(100);
+        margin-top: rem(94);
     }
 }

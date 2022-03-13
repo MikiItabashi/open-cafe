@@ -26,6 +26,7 @@
     font-family: $font-family-third;
     font-size: rem(24);
     line-height: (33 / 24);
+    text-align: center;
     @include mq('sp') {
         font-size: rem(24);
         line-height: (33 / 24);

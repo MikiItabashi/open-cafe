@@ -1,6 +1,6 @@
 .c-sub-btn {
     display: inline-block;
-    padding: rem(8) rem(24);
+    padding: rem(4) rem(24);
     background: $text-dark;
     color: $text-light;
     font-size: rem(14);
@@ -12,7 +12,7 @@
         color: $text-dark;
     }
     @include mq('sp') {
-        padding: rem(6) rem(16);
+        padding: rem(3) rem(16);
         font-size: rem(12);
     }
 }

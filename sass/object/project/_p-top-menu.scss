@@ -23,22 +23,22 @@
     &::after {
         position: absolute;
         content: "";
-        width: rem(267);
-        height: rem(294);
+        width: rem(381);
+        height: rem(382);
         background-image: url(../img/bg_coffee-leaves2.png);
         background-position: left top;
         background-repeat: no-repeat;
         background-size: contain;
-        left: rem(-30);
-        top: rem(-228);
+        left: rem(-156);
+        top: rem(-290);
         z-index: 3;
     }
     @include mq('sp') {
         &::after {
-            width: rem(129);
-            height: rem(141);
+            width: rem(173);
+            height: rem(168);
             left: rem(-30);
-            top: rem(-175);
+            top: rem(-193);
         }
     }
 }
@@ -48,7 +48,7 @@
 }
 
 .p-top-menu__content {
-    margin-top: rem(40);
+    margin-top: rem(44);
 }
 
 .p-top-menu__genre {}
@@ -81,13 +81,13 @@
 }
 
 .p-top-menu__items {
-    margin-top: rem(24);
+    margin-top: rem(27);
     margin-bottom: rem(100);
     display: grid;
     gap: rem(36) rem(40);
     grid-template-columns: 1fr 1fr 1fr;
     @include mq('sp') {
-        margin-top: rem(20);
+        margin-top: rem(29);
         margin-bottom: rem(40);
         gap: rem(19) rem(20);
         grid-template-columns: 1fr 1fr;
@@ -98,7 +98,7 @@
 
 .p-top-menu__btn {
     text-align: center;
-    margin-top: rem(60);
+    margin-top: rem(71);
     @include mq('sp') {
         margin-top: rem(40);
     }

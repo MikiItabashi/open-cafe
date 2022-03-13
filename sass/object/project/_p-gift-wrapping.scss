@@ -2,7 +2,7 @@
     border: 4px solid $main-color;
     position: relative;
     background: $text-light;
-    padding: rem(70) rem(50);
+    padding: rem(74) rem(55);
     display: flex;
     gap: rem(60);
     &::before {
@@ -16,7 +16,7 @@
         border: 1px solid $main-color;
     }
     @include mq('sp') {
-        padding: rem(40);
+        padding: rem(36) rem(43);
         flex-direction: column;
         gap: rem(40);
     }
@@ -59,7 +59,7 @@
 }
 
 .p-gift-wrapping__text {
-    margin-top: rem(60);
+    margin-top: rem(36);
     color: $text-dark;
     font-weight: 500;
     @include mq('sp') {

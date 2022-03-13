@@ -2,7 +2,7 @@
 
 .p-sidebar__box {
     background: #F8F8F8;
-    padding: rem(20);
+    padding: rem(8) rem(20) rem(20);
     &:not(:last-child) {
         margin-bottom: rem(60);
     }
@@ -16,7 +16,7 @@
 .p-sidebar__heading {
     font-size: rem(20);
     font-weight: 700;
-    padding-bottom: rem(20);
+    padding-bottom: rem(16);
     margin-bottom: rem(20);
     position: relative;
     &::before {
@@ -42,7 +42,7 @@
 .p-sidebar__item {}
 
 .p-sidebar__list li:not(:last-child) {
-    margin-bottom: rem(16);
+    margin-bottom: rem(8);
 }
 
 .p-sidebar__list a {

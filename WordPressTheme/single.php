@@ -5,7 +5,7 @@
 if (have_posts()) :
     while (have_posts()) : the_post();
 ?>
-        <div class="p-single">
+        <article class="p-single">
             <div class="p-single__inner l-inner l-inner--slim">
                 <div class="p-single__thumbnail">
                     <?php
@@ -64,7 +64,7 @@ if (have_posts()) :
 
                         <?php
                         $args = array(
-                            'category__in' => $cat_id , // カテゴリーのIDで記事を取得
+                            'category__in' => $cat_id, // カテゴリーのIDで記事を取得
                             'posts_per_page' => 6, //全件取得
                             'post_type' => 'post', //取得対象は投稿
                             'orderby' => 'date', //並び順は管理画面で指定した並び順
@@ -114,6 +114,6 @@ if (have_posts()) :
 endif;
     ?>
 
-        </div>
+        </article>
 
         <?php get_footer(); ?>

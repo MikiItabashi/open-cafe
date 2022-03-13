@@ -29,9 +29,10 @@
 .p-access-item__info {
     margin-top: rem(40);
     display: grid;
-    gap: rem(24);
+    gap: rem(40);
     grid-template-columns: 1fr 1fr;
     @include mq('sp') {
+        margin-top: rem(46);
         gap: rem(20);
         grid-template-columns: 1fr;
     }
@@ -39,7 +40,7 @@
 
 .p-access-item__items {
     display: grid;
-    gap: rem(40);
+    gap: rem(20);
     grid-template-columns: 1fr;
     @include mq('sp') {
         gap: rem(20);
@@ -50,11 +51,14 @@
 .p-access-item__item {
     display: flex;
     justify-content: start;
-    padding-bottom: rem(14);
+    padding-bottom: rem(12);
     border-bottom: 1px solid $text-dark;
     font-size: rem(14);
     font-weight: 700;
     line-height: (24 / 14);
+    @include mq('sp') {
+        padding-bottom: rem(10);
+    }
 }
 
 .p-access-item__term {

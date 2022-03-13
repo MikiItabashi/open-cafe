@@ -4,10 +4,10 @@
 
 .p-gift__items {
     display: grid;
-    gap: rem(44) rem(40);
+    gap: rem(41) rem(40);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     @include mq('sp') {
-        gap: rem(40) rem(18);
+        gap: rem(40) rem(24);
         grid-template-columns: 1fr 1fr;
     }
 }

@@ -32,6 +32,10 @@
     font-size: rem(14);
     font-weight: 700;
     line-height: (24 / 14);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     @include mq('sp') {
         font-size: rem(12);
         line-height: (18 / 12);
@@ -50,6 +54,13 @@
 .p-news-card__category {}
 
 .p-news-card--big {
+    .p-news-card__category {
+        font-size: rem(16);
+        &::after {
+            right: rem(-12);
+            border-width: rem(14) rem(12) rem(14) rem(0);
+        }
+    }
     .p-news-card__content {
         margin-top: rem(16);
     }
@@ -105,5 +116,12 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+    }
+    @include mq('sp') {
+        grid-template-columns: 100fr 181fr;
+    }
+    .p-news-card__title {
+        font-size: rem(14);
+        line-height: (24 / 14);
     }
 }

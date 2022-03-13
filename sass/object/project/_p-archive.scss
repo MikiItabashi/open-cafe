@@ -7,7 +7,8 @@
 .p-archive__heading {
     font-size: rem(24);
     font-weight: 700;
-    margin-bottom: rem(24);
+    margin-bottom: rem(28);
+    line-height: 1;
     @include mq('sp') {
         font-size: rem(20);
         margin-bottom: rem(40);

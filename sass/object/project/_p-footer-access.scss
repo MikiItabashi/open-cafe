@@ -15,16 +15,17 @@
         background-position: right top;
         background-repeat: no-repeat;
         background-size: contain;
-        right: rem(-150);
-        top: rem(-150);
+        right: rem(-353);
+        top: rem(-185);
         z-index: 3;
     }
     @include mq('sp') {
+        padding-top: rem(88);
         &::after {
             width: rem(188);
             height: rem(180);
-            right: rem(-40);
-            top: rem(-80);
+            right: rem(-35);
+            top: rem(-102);
         }
     }
 }
@@ -41,17 +42,17 @@
         background-position: right top;
         background-repeat: no-repeat;
         background-size: contain;
-        right: calc(50% + #{rem(100)});
-        top: rem(-105);
+        right: calc(50% + #{rem(72)});
+        top: rem(-137);
         z-index: 3;
     }
     @include mq('sp') {
         &::after {
             width: rem(200);
             height: rem(173);
-            left: rem(-60);
+            left: rem(-51);
             right: initial;
-            top: rem(-130);
+            top: rem(-131);
         }
     }
 }

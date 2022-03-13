@@ -8,7 +8,10 @@
 .p-sns__item {
     font-size: rem(20);
     &:not(:last-child) {
-        margin-right: rem(24);
+        margin-right: rem(27);
     }
     a {}
+    @include mq('sp') {
+        font-size: rem(28);
+    }
 }

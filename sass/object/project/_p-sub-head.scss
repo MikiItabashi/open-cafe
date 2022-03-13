@@ -41,7 +41,7 @@
 }
 
 .p-sub-head__title {
-    padding: rem(100) 0;
+    padding: rem(101) 0;
     color: $text-light;
     text-align: center;
     .c-title-en {
@@ -58,10 +58,12 @@
         .c-title-en {
             font-size: rem(32);
             line-height: (41 / 32);
+            letter-spacing: 0.2em;
         }
         .c-title-ja {
             margin-top: 0;
             font-size: rem(12);
+            letter-spacing: 0.08em;
         }
     }
 }

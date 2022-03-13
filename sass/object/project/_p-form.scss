@@ -7,7 +7,7 @@
         border: 1px solid $main-color;
         border-radius: rem(6);
         background: $text-light;
-        padding: rem(12) rem(16);
+        padding: rem(7) rem(16);
         appearance: none;
         color: inherit;
         font-family: inherit;
@@ -19,6 +19,11 @@
         height: rem(240);
         resize: vertical;
     }
+    @include mq('sp') {
+        textarea {
+            height: rem(200);
+        }
+    }
 }
 
 .p-form__items {}
@@ -27,7 +32,7 @@
     display: flex;
     justify-content: start;
     &:not(:last-child) {
-        margin-bottom: rem(40);
+        margin-bottom: rem(31);
     }
     @include mq('sp') {
         display: block;
@@ -38,7 +43,7 @@
     width: rem(200);
     font-weight: 700;
     font-size: rem(16);
-    margin-top: rem(13);
+    margin-top: rem(9);
     @include mq('sp') {
         width: 100%;
         margin-top: 0;
@@ -63,12 +68,13 @@
 }
 
 .p-form__text {
-    margin-top: rem(40);
+    margin-top: rem(43);
     font-size: rem(14);
     font-weight: 500;
     line-height: (20 / 14);
     @include mq('sp') {
-        margin-top: rem(20);
+        margin-top: rem(9);
+        line-height: (24 / 14);
     }
 }
 
@@ -134,7 +140,8 @@ input[type="radio"]:checked+span::after {
     width: 100%;
     font-size: rem(16);
     font-weight: 500;
+    margin-left: 0;
     &:not(:last-child) {
-        margin-bottom: rem(16);
+        margin-bottom: rem(8);
     }
 }

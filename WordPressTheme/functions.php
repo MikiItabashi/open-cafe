@@ -173,7 +173,9 @@ EOD;
 // パンくずリストの記事タイトルを非表示
 function foo_pop($trail)
 { {
-		array_shift($trail->trail);
+		if (is_single()) {
+			array_shift($trail->trail);
+		}
 	}
 }
 add_action('bcn_after_fill', 'foo_pop');

@@ -333,30 +333,30 @@
                     <div class="p-drink-menu__block">
                         <p class="p-drink-menu__heading">コーヒー</p>
                         <ul class="p-drink-menu__items">
-                            <li class="p-drink-menu__item">ブレンド<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">カフェラテ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">豆乳ラテ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">カフェモカ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">キャラメルラテ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">バニララテ<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">ブレンド<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">カフェラテ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">豆乳ラテ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">カフェモカ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">キャラメルラテ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">バニララテ<span class="p-drink-menu__price">500 yen</span></li>
                         </ul>
                     </div>
                     <div class="p-drink-menu__block">
                         <p class="p-drink-menu__heading">紅茶</p>
                         <ul class="p-drink-menu__items">
-                            <li class="p-drink-menu__item">ストレート<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">ミルク<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">ストレート<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">ミルク<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500 yen</span></li>
                         </ul>
                     </div>
                     <div class="p-drink-menu__block">
                         <p class="p-drink-menu__heading">ソフトドリンク</p>
                         <ul class="p-drink-menu__items">
-                            <li class="p-drink-menu__item">バナナ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">オレンジ<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">マンゴー<span class="p-drink-menu__price">500yen</span></li>
-                            <li class="p-drink-menu__item">ミックス<span class="p-drink-menu__price">500yen</span></li>
+                            <li class="p-drink-menu__item">バナナ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">オレンジ<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">アップル<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">マンゴー<span class="p-drink-menu__price">500 yen</span></li>
+                            <li class="p-drink-menu__item">ミックス<span class="p-drink-menu__price">500 yen</span></li>
                         </ul>
                     </div>
                 </div>
@@ -433,7 +433,7 @@
                             <div class="p-news-card__content">
                                 <p class="p-news-card__title"><?php the_title(); ?></p>
                                 <?php if ($counter <= 1) : ?>
-                                    <p class="p-news-card__text"><?php the_excerpt(); ?></p>
+                                    <div class="p-news-card__text"><?php the_excerpt(); ?></div>
                                 <?php endif; ?>
                                 <time class="p-news-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n.j'); ?></time>
                             </div>

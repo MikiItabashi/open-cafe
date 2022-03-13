@@ -35,7 +35,7 @@
                     </div>
                     <div class="p-gift-item__body">
                         <p class="p-gift-item__title"><?php the_title(); ?></p>
-                        <p class="p-gift-item__price"><?php the_field('price'); ?>yen</p>
+                        <p class="p-gift-item__price"><?php the_field('price'); ?> yen</p>
                         <div class="p-gift-item__btn">
                             <a href="#" class="c-sub-btn">ショップで確認する</a>
                         </div>

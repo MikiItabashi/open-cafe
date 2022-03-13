@@ -24,9 +24,16 @@
     position: absolute;
     content: "";
     width: rem(160);
-    right: 0;
-    top: rem(-80);
-    img {}
+    right: rem(5);
+    top: rem(-75);
+    img {
+        object-fit: contain;
+    }
+    @include mq('sp') {
+        width: rem(124);
+        right: rem(-1);
+        top: rem(-31);
+    }
 }
 
 .p-puckup-news__img {
@@ -50,6 +57,9 @@
         object-fit: cover;
         object-position: center;
     }
+    @include mq('sp') {
+        max-width: rem(100);
+    }
 }
 
 .p-puckup-news__content {
@@ -61,8 +71,11 @@
 }
 
 .p-puckup-news__title {
-    margin-top: rem(12);
     font-size: rem(14);
     font-weight: 700;
     line-height: (24 / 14);
+    @include mq('sp') {
+        font-size: rem(12);
+        line-height: (18 / 12);
+    }
 }

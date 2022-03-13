@@ -28,7 +28,7 @@
         top: 50%;
         right: rem(-9);
         transform: translateY(-50%);
-        border-width: 12px 10px 12px 0px;
+        border-width: rem(11.5) rem(10) rem(11.5) rem(0);
         border-color: $main-color transparent $main-color $main-color;
         border-style: solid;
     }

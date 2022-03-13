@@ -24,18 +24,17 @@
 
 .p-drawer-content__logo {
     width: 100%;
-    max-width: rem(120);
+    max-width: rem(148);
     padding: rem(10) rem(15);
-    img {}
+    img {
+        object-fit: contain;
+    }
 }
 
 .p-drawer-content__items {
-    margin-top: rem(41);
+    margin-top: rem(35);
     display: flex;
     flex-direction: column;
-    @include mq('sp') {
-        margin-top: rem(57);
-    }
 }
 
 .p-drawer-content__item {
@@ -48,10 +47,7 @@
         line-height: 1;
         font-family: $font-family-fourth;
         text-transform: uppercase;
-        padding: rem(16) 0 rem(16) rem(42);
-        @include mq('sp') {
-            padding-left: rem(40);
-        }
+        padding: rem(18) rem(40);
     }
     span {
         margin-left: rem(12);
@@ -67,16 +63,13 @@
 }
 
 .p-drawer-content__sns {
-    margin-top: rem(36);
+    margin-top: rem(27);
     color: $text-light;
     .p-sns__item {
         font-size: rem(32);
         &:not(:last-child) {
             margin-right: rem(32);
         }
-    }
-    @include mq('sp') {
-        margin-top: rem(52);
     }
 }
 

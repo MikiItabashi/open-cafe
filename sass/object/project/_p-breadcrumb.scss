@@ -5,6 +5,19 @@
         display: inline-block;
         margin: 0 rem(8);
     }
+    @include mq('sp') {
+        font-size: rem(12);
+        span {
+            margin: 0 rem(5);
+        }
+    }
 }
 
-.p-breadcrumb__inner {}
+.p-breadcrumb__inner {
+    padding-left: rem(8);
+    margin-top: rem(13);
+    @include mq('sp') {
+        padding-left: 0;
+        margin-top: rem(3);
+    }
+}
