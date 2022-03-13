@@ -164,7 +164,7 @@ function add_thanks_page()
 	echo <<< EOD
 <script>
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-	location = 'http://opencafe.local/contact/thanks';
+	location = 'http://sara-test.com/open-cafe/contact/thanks';
 }, false );
 </script>
 EOD;
