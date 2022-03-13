@@ -67,6 +67,7 @@ if (have_posts()) :
                             'category__in' => $cat_id, // カテゴリーのIDで記事を取得
                             'posts_per_page' => 6, //全件取得
                             'post_type' => 'post', //取得対象は投稿
+                            'post__not_in' => array($post->ID), // 表示中の投稿を除外
                             'orderby' => 'date', //並び順は管理画面で指定した並び順
                             'order' => 'DESC', //昇順
                         );

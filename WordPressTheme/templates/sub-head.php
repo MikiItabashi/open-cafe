@@ -26,7 +26,11 @@ endif;
     <div class="p-sub-head__wrapper">
         <div class="p-sub-head__title c-title">
             <p class="c-title-en"><?php echo $titleEn; ?></p>
+            <?php if(is_single()): ?>
+            <p class="c-title-ja"><?php echo $titleJa; ?></p>
+            <?php else: ?>
             <h1 class="c-title-ja"><?php echo $titleJa; ?></h1>
+            <?php endif; ?>
         </div>
     </div>
 </section>
