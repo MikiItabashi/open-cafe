@@ -40,6 +40,7 @@
     }
     @include mq('sp') {
         flex-direction: column-reverse;
+        gap: 0;
         &::after {
             width: rem(145);
             height: rem(130);
@@ -58,7 +59,7 @@
     }
     @include mq('sp') {
         width: 94%;
-        margin: 0 calc(50% - 50vw);
+        margin: rem(80) calc(50% - 50vw) 0;
         img {
             aspect-ratio: 315 / 400.57;
         }

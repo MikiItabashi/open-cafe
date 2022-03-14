@@ -19,6 +19,14 @@
         height: rem(240);
         resize: vertical;
     }
+    input[type="submit"] {
+        box-shadow: none;
+        appearance: none;
+        -webkit-appearance: none;
+        font-family: inherit;
+        border: none;
+        border-radius: 0;
+    }
     @include mq('sp') {
         textarea {
             height: rem(200);
